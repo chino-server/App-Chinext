@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import TypingEffect from './component'
+import TypingEffect from '@/app/typing'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -17,14 +18,16 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             By Informatica Forense {' '}
+            <Link href={'/login'}>
             <Image
               src="/chinex.svg"
-              alt="Vercel Logo"
+              alt="Chi-nex Logo"
               className="dark:invert"
               width={100}
               height={24}
               priority
             />
+            </Link>
           </a>
         </div>
       </div>
