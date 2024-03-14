@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
-
+} */
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -24,4 +24,20 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+.border-gradient {
+  position: relative;
+  background: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+  border-radius: 0.5rem; /* 8px */
+  padding: 2px; /* This can be adjusted to control the thickness of the border */
+}
+.border-gradient::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  border-radius: inherit; /* Inherit the border-radius of the parent */
+  padding: inherit; /* Inherit the padding of the parent */
+  background: white;
+  z-index: -1;
 }
